@@ -1,0 +1,10 @@
+{
+    'source': 'sina', // string, representing which kind of weibo, could be tecent, souhu, 163 and so on. 
+    'user': 'The screen name of the author', //  string, the screen name of the blogger, the user id if meaningless if we are crawling different sources of weibo
+    'content': 'The content of the tweet', // string, the original content of weibo
+    'created_at': 1403954453.748556, //float, the time of weibo created in seconds since the Epoch.  since in the source of crawled page the data may be represented by different format, pls convert the time into this format. In each programming, there would be some method to convert a time string into EPOCH seconds by defining the rules.
+    'keywords': ['nba', 'sports'], // a list of string, indicating which keywords to use to get this result
+    'retweet_num': 108, // int, how many times this weibo has been retweeted
+    }
+
+// Please encode each weibo from different sources using this format for convience, and the encoding of the file should be utf-8
