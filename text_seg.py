@@ -1,6 +1,7 @@
 # coding=utf-8
 # this file is used to tokenize the long documents
 import jieba
+import re
 jieba.load_userdict("meta/userdict.txt")
 # import jieba.posseg as pseg
 
@@ -26,7 +27,7 @@ def tokenize(text):
     # seg_list = pseg.cut(test.strip())
     for token in seg_list:
         token = token.strip()
-        if token != '' and token not in stops:
+        if token != '' and (token.strip() not in stops) and (re.search('\D+', token.strip()) is not None):
             # print type(token)
             r.append(token)
     return r
